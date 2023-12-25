@@ -1,10 +1,12 @@
 # Architecture
 I have designed and implemented the following architecture, and successfully completed a proof of concept.
 
-![ECS-Fargate1](https://github.com/INDALARAJESH/ecs-task-defination/assets/109213968/0fb6548e-2a86-4b07-a4c8-90253015b856)
+![ECS-Fargate1](https://github.com/INDALARAJESH/ecs-task-defination/assets/109213968/a0e29eaf-1e5c-4404-a619-089244944603)
 
 
-# Docker File
+
+
+# Creating a Docker File
 
 #step:1
 take ubuntu instance (t2.micro)
