@@ -51,13 +51,7 @@ WORKDIR /app
 #copy the files in html folder
 COPY ./inance-html/ /usr/share/nginx/html/
 
-
 #expose container port 80
-EXPOSE 80
-
-
-
-# Expose port 80
 EXPOSE 80
 
 provide the access keys & secret key for aws configuration
