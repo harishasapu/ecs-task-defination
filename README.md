@@ -36,17 +36,23 @@ create the docker file:
 
 vi Dockerfile
 
-# Use an official Nginx image as a base image
+#Base Image
 FROM nginx:latest
 
-# Remove the default index.html
+#Remove the files
 RUN rm ./usr/share/nginx/html/*
 
 #Working Dir
 WORKDIR /app
 
-# Copy your custom index.html to the Nginx public directory
+#copy the files in html folder
 COPY ./inance-html/ /usr/share/nginx/html/
+
+
+#expose container port 80
+EXPOSE 80
+
+
 
 # Expose port 80
 EXPOSE 80
