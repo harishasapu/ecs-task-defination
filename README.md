@@ -115,7 +115,7 @@ This repository contains Terraform files for deploying and managing AWS resource
 
 ## Usage
 
-Clone the repository from github and configure cli with using profile or env variabales
+Clone the repository from github and configure aws cli with using profile or env variabales and make sure that terraform and AWS cli is installed in your loacal machine or any server
 
 1.Configure AWS CLI with a Profile:
 
