@@ -30,7 +30,7 @@ sudo apt install unzip
 
 unzip inance-html
 
-3step:5 
+#step:5 
 
 create the docker file:
 
@@ -111,6 +111,21 @@ This repository contains Terraform files for deploying and managing AWS resource
      - `aws_iam_role`, `aws_iam_role_policy_attachment`: IAM roles and policy attachments.
 
 ## Usage
+
+Clone the repository from github and configure cli with using profile or env variabales
+
+1.Configure AWS CLI with a Profile:
+
+Open a terminal and run the following command:
+
+aws configure --profile omedo
+Ensure that the profile you specify in the profile attribute corresponds to the profile configured in your AWS CLI (~/.aws/config)
+
+2. Using Environment Variables:
+Set the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables in your terminal session or script before running Terraform
+export AWS_ACCESS_KEY_ID="your-access-key-id"
+export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
+
 
 To use these Terraform files:
 1. Ensure you have Terraform installed and AWS access configured.
