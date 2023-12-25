@@ -5,6 +5,66 @@ I have designed and implemented the following architecture, and successfully com
 
 # Docker File
 
+#step:1
+take ubuntu instance (t2.micro)
+update the packages
+
+sudo apt update
+
+#step:2 
+install docker
+
+sudo apt install docker.io
+sudo chmod 666 var/run/docker.sock
+
+#step:3
+
+ download html static pages
+
+curl -O https://www.free-css.com/assets/files/free-css-templates/download/page296/inance.zip
+
+#step:4
+unzip the file
+
+sudo apt install unzip
+
+unzip inance-html
+
+3step:5 
+
+create the docker file:
+
+vi Dockerfile
+
+# Use an official Nginx image as a base image
+FROM nginx:latest
+
+# Remove the default index.html
+RUN rm ./usr/share/nginx/html/*
+
+#Working Dir
+WORKDIR /app
+
+# Copy your custom index.html to the Nginx public directory
+COPY ./inance-html/ /usr/share/nginx/html/
+
+# Expose port 80
+EXPOSE 80
+
+provide the access keys & secret key for aws configuration
+
+aws configure
+enter access keys
+
+step:6
+build the docker image and push to aws ecr
+
+aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/u9n2k9v9
+docker build -t dxc .
+docker tag dxc:latest public.ecr.aws/u9n2k9v9/dxc:latest
+docker push public.ecr.aws/u9n2k9v9/dxc:latest
+
+
 
 # Terraform Configuration Overview
 
